@@ -82,7 +82,7 @@ export default function Creator() {
                 Revan
               </h3>
               <p className="text-muted-foreground text-sm mt-1">
-                Cloud Engineering {" "}
+                Cloud Engineering {" "} <br/>
                 <span className="text-primary font-semibold font-mono">Amazon Web Services</span>
               </p>
             </div>
