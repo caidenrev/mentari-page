@@ -82,8 +82,8 @@ export default function Creator() {
                 Revan
               </h3>
               <p className="text-muted-foreground text-sm mt-1">
-                Eka Revandi · aka{" "}
-                <span className="text-primary font-semibold font-mono">caiden</span>
+                Cloud Engineering {" "}
+                <span className="text-primary font-semibold font-mono">Amazon Web Services</span>
               </p>
             </div>
 
