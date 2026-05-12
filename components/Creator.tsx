@@ -39,8 +39,6 @@ export default function Creator() {
 
   return (
     <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-
-      {/* Ambient glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] opacity-[0.04]"
@@ -67,67 +65,37 @@ export default function Creator() {
           </h2>
         </motion.div>
 
-        {/* 3-col grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_1fr] gap-8 lg:gap-10 items-start">
+        {/* 2-col grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
 
-          {/* ── Col 1: 9:16 Photo only (name moved to col 2 on desktop) ── */}
+          {/* ── Col 1: Name + Experience ── */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center md:items-start gap-3"
+            className="flex flex-col gap-5"
           >
-            {/* Name — visible only on mobile, hidden on desktop */}
-            <div className="md:hidden text-center">
-              <h3 className="font-bold text-foreground text-3xl leading-tight">Eka Revandi</h3>
-              <p className="text-muted-foreground text-base mt-1">
-                aka <span className="text-primary font-semibold font-mono">caiden</span> · revan
+            {/* Name */}
+            <div>
+              <h3 className="font-bold text-foreground text-2xl sm:text-3xl leading-tight">
+                Revan
+              </h3>
+              <p className="text-muted-foreground text-sm mt-1">
+                Eka Revandi · aka{" "}
+                <span className="text-primary font-semibold font-mono">caiden</span>
               </p>
             </div>
 
-            {/* Square on mobile (w-64), 9:16 portrait on desktop */}
-            <div className="relative w-64 sm:w-72 md:w-44 lg:w-52 shrink-0">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-1.5 rounded-2xl opacity-25"
-                style={{ background: "linear-gradient(135deg, #F05A00, #FFAA00)" }}
-              />
-              <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-primary/15">
-                <Image
-                  src="/revan.jpg"
-                  alt="Eka Revandi"
-                  width={208}
-                  height={370}
-                  className="revan-photo w-full object-cover object-top block"
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* ── Col 2: Experience ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col gap-4"
-          >
-            {/* Name — visible only on desktop, above Experience label */}
-            <div className="hidden md:block mb-1">
-              <h3 className="font-bold text-foreground text-xl leading-tight">Eka Revandi</h3>
-              <p className="text-muted-foreground text-sm mt-0.5">
-                aka <span className="text-primary font-semibold font-mono">caiden</span> · revan
-              </p>
-            </div>
-
+            {/* Experience label */}
             <div className="flex items-center gap-2">
+              <Briefcase size={13} className="text-primary" />
               <p className="font-mono text-[11px] text-muted-foreground uppercase tracking-widest">
                 Experience
               </p>
             </div>
 
+            {/* Experience cards */}
             <div className="flex flex-col gap-3">
               {EXPERIENCES.map((exp) => (
                 <div
@@ -155,19 +123,20 @@ export default function Creator() {
               ))}
             </div>
 
-            <div className="mt-1 border-l-2 border-primary/40 pl-3.5">
+            {/* Quote */}
+            <div className="border-l-2 border-primary/40 pl-3.5">
               <p className="text-muted-foreground text-sm leading-relaxed italic">
                 &ldquo;Kalau sistemnya lambat, kita yang harus lebih cepat.&rdquo;
               </p>
             </div>
           </motion.div>
 
-          {/* ── Col 3: Story ── */}
+          {/* ── Col 2: Story ── */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.18 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col gap-3.5"
           >
             <div className="flex items-center gap-2">
